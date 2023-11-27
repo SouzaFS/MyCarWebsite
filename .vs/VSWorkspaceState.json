@@ -1,13 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.angular",
     "\\src",
     "\\src\\app",
     "\\src\\app\\components",
     "\\src\\app\\components\\login",
     "\\src\\app\\components\\signup"
   ],
-  "SelectedNode": "\\src\\app\\app.module.ts",
+  "SelectedNode": "\\src\\app\\components\\login\\login.component.html",
   "PreviewInSolutionExplorer": false
 }
