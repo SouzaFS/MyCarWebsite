@@ -1,4 +1,6 @@
 import { Component , OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { SignupService } from 'src/app/services/signup.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,9 +13,20 @@ export class SignupComponent implements OnInit {
   confirmPassword: string = "password";
   eyePassword: string = "fa fa-eye";
   eyeConfirmPassword: string = "fa fa-eye"
-  constructor() { }
+  signUpForm!: FormGroup
+  constructor(
+    private formBuilder: FormBuilder, 
+    private signUpService: SignupService
+    ) { }
 
   ngOnInit(): void {
+    this.signUpForm = this.formBuilder.group({
+    username: ['', Validators.required],
+    email: ['', Validators.required],
+    phone: ['', Validators.required],
+    password: ['', Validators.required],
+    confirmPassword: ['', Validators.required]
+    })
   }
 
   hideShowPass() {
@@ -40,5 +53,17 @@ export class SignupComponent implements OnInit {
       this.confirmPassword = "password";
       this.eyeConfirmPassword = "fa fa-eye";
     }
+  }
+
+  OnSignUp(){
+    this.signUpService.signUp(this.signUpForm.value)
+    .subscribe({
+      next:(res)=>{
+        alert("User Registered")
+      },
+      error:(err)=>{
+        alert("Error")
+      }
+    })
   }
 }

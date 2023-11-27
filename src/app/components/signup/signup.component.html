@@ -7,31 +7,31 @@
                         <h3 class="pt-3 font-weight-bold">Sign Up</h3>
                     </div>
                     <div class="panel-body p-3">
-                        <form>
+                        <form [formGroup]="signUpForm">
                           <div class="form-group pt-3">
                             <div class="input-field">
                               <span class="fa fa-envelope p-2"></span>
-                              <input type="text" placeholder="E-mail">
+                              <input formControlName="email" type="text" placeholder="E-mail">
                             </div>
                           </div>
 
                             <div class="form-group pt-3">
                                 <div class="input-field">
                                     <span class="fa fa-user p-2"></span>
-                                    <input type="text" placeholder="Username">
+                                    <input formControlName="username" type="text" placeholder="Username">
                                 </div>
                             </div>
 
                             <div class="form-group pt-3">
                                 <div class="input-field">
                                     <span class="fa fa-lock p-2"></span>
-                                    <input [type]="password" placeholder="Password">
+                                    <input formControlName="password" [type]="password" placeholder="Password">
                                     <span (click)="hideShowPass()" [class]="eyePassword"></span>
                                 </div>
 
                                 <div class="input-field">
                                     <span class="fa fa-lock p-2"></span>
-                                    <input [type]="confirmPassword" placeholder="Confirm Password">
+                                    <input formControlName="confirmPassword" [type]="confirmPassword" placeholder="Confirm Password">
                                     <span (click)="hideShowConfPass()" [class]="eyeConfirmPassword"></span>
                                 </div>
                             </div>
@@ -39,12 +39,12 @@
                             <div class="form-group pt-3">
                                   <div class="input-field">
                                     <span class="fa fa-mobile p-2"></span>
-                                    <input type="text" placeholder="Phone">
+                                    <input formControlName="phone" type="text" placeholder="Phone">
                                     
                                 </div>
                             </div>
                             
-                            <button type="submit" class="btn btn-primary mt-4 w-100">Sign up</button>
+                            <button (click)="OnSignUp()" type="submit" class="btn btn-primary mt-4 w-100">Sign up</button>
                             <div class="text-center pt-4 text-muted">Already have account? <a id="login" class="font-weight-bold" routerLink="/login">Sign in</a></div>
                         </form>
                     </div>
