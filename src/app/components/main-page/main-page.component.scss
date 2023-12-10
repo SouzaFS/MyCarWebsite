@@ -1,0 +1,53 @@
+.background{
+    height: 100vh;
+}
+
+.background img{
+    width: 100%;
+    opacity: 50%;
+    object-fit: contain;
+    border-radius: 0%;
+    position: absolute;
+}
+
+.Login{
+    margin-top: 5px;
+    height: flex;
+    position: absolute;
+    background: none;
+}
+
+.Login input{
+    margin-left: 200px;
+    text-align: center;
+    border-radius: 18px;
+    width: 100px;
+    background: rgb(215, 215, 156);
+    color: black;
+    border-width: 1px;
+}
+
+.SignUp{
+    margin-top: 5px;
+    height: flex;
+    position: absolute;
+    background: none;
+    text-justify: right;
+    left: auto;
+    right: 0px;
+}
+
+.SignUp input{
+    margin-right: 200px;
+    text-align: center;
+    border-radius: 18px;
+    width: 100px;
+    background: rgb(215, 215, 156);
+    color: black;
+    border-width: 1px;
+}
+
+.announces{
+    position: absolute;
+    height: 100px;
+}
