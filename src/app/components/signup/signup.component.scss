@@ -19,6 +19,11 @@ a:hover{
     text-decoration: none;
 }
 
+.panel-heading a{
+    margin-left: 350px;
+    color: rgb(181, 112, 0);
+}
+
 .form-inline label{
     padding-left: 10px;
     margin: 0;
@@ -28,6 +33,8 @@ a:hover{
 .btn{
     margin-top: 20px;
     border-radius: 15px;
+    background-color: rgb(181, 112, 0);
+    border-color: black;
 }
 
 .panel{
@@ -46,7 +53,7 @@ a:hover{
     align-items: center;
     cursor: pointer;
     border: 1px solid #ddd;
-    color: #4343ff;
+    color: rgb(181, 112, 0);
 }
 .input-field.error{
     border: 1px solid red;
@@ -73,4 +80,8 @@ img{
     object-fit: contain;
     border-radius: 0%;
     position: absolute;
+}
+
+a{
+    color: rgb(181, 112, 0);
 }

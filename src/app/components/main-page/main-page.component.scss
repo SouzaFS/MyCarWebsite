@@ -11,7 +11,7 @@
 }
 
 .Login{
-    margin-top: 5px;
+    margin-top: -595px;
     height: flex;
     position: absolute;
     background: none;
@@ -28,7 +28,7 @@
 }
 
 .SignUp{
-    margin-top: 5px;
+    margin-top: -595px;
     height: flex;
     position: absolute;
     background: none;
@@ -50,4 +50,27 @@
 .announces{
     position: absolute;
     height: 100px;
+}
+
+.SignUp-and-Login-Buttons{
+    margin-top: -595px;
+    margin-left: 500px;
+    position: absolute;
+}
+
+.button-panel{
+    background: rgb(181, 112, 0);
+    width: 600px;
+    position: absolute;
+    align-items: center;
+}
+
+.SignUp-and-Login-Buttons input{
+    text-align: center;
+    border-radius: 18px;
+    width: 100px;
+    background: rgb(215, 215, 156);
+    color: black;
+    border-width: 2px;
+    position: sticky;
 }
