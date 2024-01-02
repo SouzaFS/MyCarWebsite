@@ -12,6 +12,7 @@
     margin-left: auto;
     text-decoration: none;
     cursor: pointer;
+    color: rgb(181, 112, 0);
 }
 
 a:hover{
@@ -20,6 +21,10 @@ a:hover{
 
 .panel-heading a{
     margin-left: 350px;
+    color: rgb(181, 112, 0);
+}
+
+a{
     color: rgb(181, 112, 0);
 }
 
@@ -32,7 +37,7 @@ a:hover{
 .btn{
     margin-top: 20px;
     border-radius: 15px;
-    background-color: rgb(181, 112, 0);
+    background: rgb(181, 112, 0);
     border-color: black;
 }
 
@@ -79,8 +84,4 @@ img{
     object-fit: contain;
     border-radius: 0%;
     position: absolute;
-}
-
-a{
-    color: rgb(181, 112, 0);
 }

@@ -3,11 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import { ValidateCodeComponent } from './components/validate-code/validate-code.component';
 
 const routes: Routes = [
   {path:'login', component: LoginComponent},
   {path:'signup', component: SignupComponent},
-  {path:'', component: MainPageComponent}
+  {path:'', component: MainPageComponent},
+  {path:'forget', component: ForgetPasswordComponent},
+  {path:'validation', component: ValidateCodeComponent}
 ];
 
 @NgModule({
