@@ -27,7 +27,7 @@
                             <div class="form-inline fr mt-4">
                                 <a id="forget" class="font-weight-bold" routerLink="/forget">Forget Password?</a>
                             </div>
-                            <button (click)="OnAuthenticate()" type="submit" class="btn btn-primary mt-4 w-100">Login</button>
+                            <button (click)="OnAuthenticate()" type="button" [routerLink]="routerLink" class="btn btn-primary mt-4 w-100">Login</button>
                             <div class="text-center pt-4 text-muted">Don't have account? <a id="signup" class="font-weight-bold" routerLink="/signup">Sign up</a></div>
                         </form>
                     </div>
