@@ -12,7 +12,8 @@ export class LoginComponent implements OnInit {
 
   type: string = "password";
   class: string = "fa fa-eye";
-  loginForm!: FormGroup
+  loginForm!: FormGroup;
+  routerLink!: string;
   constructor(
     private formBuilder: FormBuilder,
     private loginService: LoginService
@@ -39,8 +40,6 @@ export class LoginComponent implements OnInit {
   }
 
   OnAuthenticate(){
-    this.loginService.Authenticate(this.loginForm.value)
-
-    console.log(this.loginForm.value.username)
+    this.routerLink = this.loginService.Authenticate(this.loginForm.value);
   }
 }

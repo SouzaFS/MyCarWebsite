@@ -24,7 +24,7 @@ import { ValidateCodeComponent } from './components/validate-code/validate-code.
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
