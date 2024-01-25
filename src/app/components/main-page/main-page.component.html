@@ -16,11 +16,17 @@
 </header>
 
 <body class="dropdown">
-    <button class="dropbtn"><i class="fa fa-bars" aria-hidden="true"></i></button>
-    <div class="dropdown-content">
-        <a href="login">Sign in</a>
-        <a href="signup">Sign up</a>
-    </div>
+    <button class="loginbtn" routerLink="/login" [hidden]="hidden_loginbtn"><i style="float:inline-start; line-height: 27px" class="fa fa-user-circle-o fa-lg" aria-hidden="true"></i> <span class="ml-1 " style="float:inline-end">Sign in</span></button>
+    <button class="profilebtn" [hidden]="hidden_profilebtn">
+        <div class="dropdown-content">
+            <a href="my_profile">My Profile</a>
+            <a href="my_announces">My Announces</a>
+            <a href="logout">Logout</a>
+        </div>
+        <span>F</span>
+    </button>
+    
+    
 </body>
 
 <footer>

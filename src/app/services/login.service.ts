@@ -7,17 +7,15 @@ import { Inject, Injectable } from '@angular/core';
 export class LoginService {
 
   private Url = 'https://localhost:44337/api/Users'
-  private userLocated : boolean = false;
-  private passwordMatch : boolean = false;
   returnContent! : string;
 
   constructor(
     private http : HttpClient
     ) { }
 
-  Authenticate(login:any): string{
-
-    this.http.get<any>(`${this.Url}`).subscribe(value => {
+  GetUsers(){
+    return this.http.get<any>(`${this.Url}`)
+    /*.subscribe(value => {
       
       value.data.forEach((currentUser:any) => {
         if (currentUser.username == login.username){
@@ -32,7 +30,7 @@ export class LoginService {
       }else{
         this.returnContent = "/login";
       }
-    });
-    return this.returnContent;
+    });*/
+    //return this.returnContent;
   }
 } 
