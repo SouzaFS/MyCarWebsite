@@ -9,20 +9,24 @@ import { Router } from '@angular/router';
 })
 export class MainPageComponent implements OnInit {
 
-  hidden_loginbtn : boolean = false;
-  hidden_profilebtn : boolean = true;
+  hidden_loginbtn! : boolean;
+  hidden_profilebtn! : boolean;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router
   ){ }
 
   ngOnInit(): void {
+    if (window.localStorage.getItem('currentUser') != null){
+      this.hidden_loginbtn = true;
+      this.hidden_profilebtn = false;
+    }else{
+      this.hidden_loginbtn = false;
+      this.hidden_profilebtn = true;
+    }
   }
 
-  ChangeMainPageButton(){
-    this.hidden_loginbtn = true;
-    this.hidden_profilebtn = false;
-    console.log(this.hidden_loginbtn);
-    console.log(this.hidden_profilebtn);
+  removeCurrentUser(){
+    window.localStorage.removeItem('currentUser');
   }
 }

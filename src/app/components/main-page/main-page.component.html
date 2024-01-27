@@ -20,8 +20,8 @@
     <button class="profilebtn" [hidden]="hidden_profilebtn">
         <div class="dropdown-content">
             <a href="my_profile">My Profile</a>
-            <a href="my_announces">My Announces</a>
-            <a href="logout">Logout</a>
+            <a href="my_announcements">My Announcements</a>
+            <a (click)="removeCurrentUser()" href="/">Logout</a>
         </div>
         <span>F</span>
     </button>

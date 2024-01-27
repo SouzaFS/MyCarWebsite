@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
 import { ValidateCodeComponent } from './components/validate-code/validate-code.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ValidateCodeComponent } from './components/validate-code/validate-code.
     SignupComponent,
     MainPageComponent,
     ForgetPasswordComponent,
-    ValidateCodeComponent
+    ValidateCodeComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,7 @@ import { ValidateCodeComponent } from './components/validate-code/validate-code.
     HttpClientModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [Storage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
     private formBuilder: FormBuilder,
     private loginService: LoginService,
     private router: Router,
-    private mainPage: MainPageComponent
+    private mainPage: MainPageComponent,
   ) { }
 
   ngOnInit(): void {
@@ -48,9 +48,9 @@ export class LoginComponent implements OnInit {
 
   OnAuthenticate(){
     this.loginService.GetUsers()
-    .subscribe(value => {
+    .subscribe(a => {
       
-      value.data.forEach((currentUser:any) => {
+      a.data.forEach((currentUser:any) => {
         if (currentUser.username == this.loginForm.value.username){
           this.userLocated = true;
           if (currentUser.password == this.loginForm.value.password){
@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
         }
       });
       if (this.passwordMatch && this.userLocated){
-        this.mainPage.ChangeMainPageButton();
+        window.localStorage.setItem('currentUser', this.loginForm.value.username);
         this.router.navigate(['/']);
       }else{
         this.router.navigate(['/login']);
