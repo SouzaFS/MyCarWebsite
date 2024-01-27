@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
-import { MainPageComponent } from '../main-page/main-page.component';
+import { DbInteractService } from 'src/app/services/db-interact.service';
 
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
-  providers: [MainPageComponent]
 })
 export class LoginComponent implements OnInit {
 
@@ -21,9 +19,8 @@ export class LoginComponent implements OnInit {
   passwordMatch : boolean = false;
   constructor(
     private formBuilder: FormBuilder,
-    private loginService: LoginService,
-    private router: Router,
-    private mainPage: MainPageComponent,
+    private dbInteractService: DbInteractService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -47,23 +44,23 @@ export class LoginComponent implements OnInit {
   }
 
   OnAuthenticate(){
-    this.loginService.GetUsers()
+    this.dbInteractService.Get()
     .subscribe(a => {
-      
       a.data.forEach((currentUser:any) => {
         if (currentUser.username == this.loginForm.value.username){
           this.userLocated = true;
           if (currentUser.password == this.loginForm.value.password){
             this.passwordMatch = true;
+            window.localStorage.setItem('currentUserID', currentUser.id);
+            //window.localStorage.setItem('Initial', currentUser.username.charAt(0));
           }
         }
+        if (this.passwordMatch && this.userLocated){
+          this.router.navigate(['/']);
+        }else{
+          this.router.navigate(['/login']);
+        }
       });
-      if (this.passwordMatch && this.userLocated){
-        window.localStorage.setItem('currentUser', this.loginForm.value.username);
-        this.router.navigate(['/']);
-      }else{
-        this.router.navigate(['/login']);
-      }
     });
   }
 }

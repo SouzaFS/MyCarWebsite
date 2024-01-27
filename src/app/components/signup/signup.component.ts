@@ -1,6 +1,6 @@
 import { Component , OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { SignupService } from 'src/app/services/signup.service';
+import { DbInteractService } from 'src/app/services/db-interact.service';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +16,7 @@ export class SignupComponent implements OnInit {
   signUpForm!: FormGroup
   constructor(
     private formBuilder: FormBuilder, 
-    private signUpService: SignupService
+    private dbInteractService: DbInteractService
     ) { }
 
   ngOnInit(): void {
@@ -56,14 +56,19 @@ export class SignupComponent implements OnInit {
   }
 
   OnSignUp(){
-    this.signUpService.signUp(this.signUpForm.value)
-    .subscribe({
-      next:(res)=>{
-        alert("User Registered")
-      },
-      error:(err)=>{
-        alert("Error")
-      }
-    })
+    if(this.confirmPassword == this.password){
+      this.dbInteractService.Create(this.signUpForm.value)
+      .subscribe({
+        next:(res)=>{
+          alert("User Registered")
+        },
+        error:(err)=>{
+          alert("Error")
+        }
+      })
+    }else{
+        alert("passwords don't match")
+    }
+
   }
 }
