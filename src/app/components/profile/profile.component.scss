@@ -1,0 +1,98 @@
+.outer{
+    height: 100vh;
+}
+
+.panel-heading{
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#forget{
+    min-width: 100px;
+    margin-left: auto;
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(181, 112, 0);
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.panel-heading a{
+    margin-left: 600px;
+    color: rgb(181, 112, 0);
+}
+
+a{
+    color: rgb(181, 112, 0);
+}
+
+.form-inline label{
+    padding-left: 10px;
+    margin: 0;
+    cursor: pointer;
+}
+
+.btn{
+    margin-top: 20px;
+    border-radius: 15px;
+    background: rgb(181, 112, 0);
+    border-color: black;
+}
+
+.panel{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-40%) translateY(-50%);
+    width: 800px;
+    min-height: 500px;
+    border-radius: 18px;
+}
+
+.panel-v2{
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translateX(10%) translateY(-50%);
+    width: 200px;
+    min-height: 500px;
+    border-radius: 18px;
+}
+
+.input-field{
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    color: rgb(181, 112, 0);
+}
+.input-field.error{
+    border: 1px solid red;
+    color: red;
+}
+
+input[type='text'],
+input[type='password']{
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: 100%;
+}
+
+.fa-eye-slash.btn{
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+img{
+    width: 100%;
+    opacity: 50%;
+    object-fit: contain;
+    border-radius: 0%;
+    position: absolute;
+}
