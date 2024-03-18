@@ -17,7 +17,8 @@
                             </div>
                             <button type="submit" class="btn btn-primary mt-4 w-100">Validate Code</button>
                             <div class="form-inline fr mt-4">
-                                <a id="forget" class="font-weight-bold">Resend Code</a>
+                                <a (click)="sendCode()" id="forget" class="font-weight-bold" [hidden]="hiddenResendCodeButton">Resend Code</a>
+                                <p class="TimerClock" [hidden]="hiddenTimerClock"> {{ stringMinutes }}:{{ stringSeconds }}</p>
                             </div>
                         </form>
                     </div>
