@@ -52,7 +52,6 @@ export class LoginComponent implements OnInit {
           if (currentUser.password == this.loginForm.value.password){
             this.passwordMatch = true;
             window.localStorage.setItem('currentUserID', currentUser.id);
-            //window.localStorage.setItem('Initial', currentUser.username.charAt(0));
           }
         }
         if (this.passwordMatch && this.userLocated){
