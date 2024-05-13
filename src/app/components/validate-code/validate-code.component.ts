@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from 'src/app/models/user.model';
-import { CreateEmailService } from 'src/app/services/create-email.service';
 import { DbInteractService } from 'src/app/services/db-interact.service';
 
 @Component({
@@ -25,8 +24,7 @@ export class ValidateCodeComponent implements OnInit {
 
 
   constructor(
-    private dbInteractService: DbInteractService,
-    private createEmailService: CreateEmailService,
+    private dbInteractService: DbInteractService
   ) { }
 
   ngOnInit(): void{
@@ -82,21 +80,6 @@ export class ValidateCodeComponent implements OnInit {
   }
 
   sendCode(){
-    console.log(this.user)
-    this.user.UserEmail = window.localStorage.getItem('ForgotPasswordEmail')!;
-    this.dbInteractService.Get()
-    .subscribe(a => {
-      a.data.forEach((currentUser:any) => {
-        if (currentUser.email == this.user.UserEmail){
-          this.user.UserName = currentUser.name;
 
-          this.createEmailService.SendEmail("CodeValidation","office365", this.user)
-          .subscribe(a => console.log(a.data));
-
-          this.hiddenTimerClock = false;
-          this.hiddenResendCodeButton = true;
-        }
-      });
-    });
   }
 }

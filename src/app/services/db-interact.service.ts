@@ -8,6 +8,7 @@ export class DbInteractService {
 
   private Url = 'https://localhost:44337/api/Users'
   private UrlId = 'https://localhost:44337/api/Users/id?id='
+  private EmailUrl = 'https://localhost:44337/api/Email'
 
   constructor(
     private http : HttpClient
@@ -32,4 +33,9 @@ export class DbInteractService {
   Update(id: number, object: any){
     return this.http.put<any>(`${this.UrlId}`+id.toString(), object);
   }
+
+  SendEmail(emailType: string, emailCredentials: string, object: any){
+    return this.http.post<any>(`${this.EmailUrl}`+'?emailType='+emailType.toString()+'&emailCredentials='+emailCredentials.toString(),object);
+  }
+  
 }
